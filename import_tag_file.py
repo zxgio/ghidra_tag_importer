@@ -28,6 +28,7 @@ def read_tag_file(filepath):
             m = RVA_LINE.match(line)
             if m is None:
                 print("Skipping line:", line)
+                continue
             rva = int(m.group(1), 16)
             comment = m.group(2)
             rva_to_comments[rva].add(comment)
